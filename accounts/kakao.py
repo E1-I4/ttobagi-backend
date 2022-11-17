@@ -45,14 +45,14 @@ def kakao_callback(request):
         user = User.objects.get(email=email)
         social_user = SocialAccount.objects.get(user=user)
         if social_user == None:
-            return JsonResponse({'message': 'KAKAO_EMAIL_NOT_REGISTERED'}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({'message': 'kakao email is not registered'}, status=status.HTTP_400_BAD_REQUEST)
         
         # 기존 가입된 유저
         data = {'access_token': access_token,'code': code}
         accept = requests.post(BASE_URL + 'api/user/kakao/login/finish', data=data)
         accept_status = accept.status_code
         if accept_status != 200:
-            return JsonResponse({'message': 'KAKAO_LOGIN_FAILED'}, status=accept_status)
+            return JsonResponse({'message': 'kakao login failed'}, status=accept_status)
         accept_json = accept.json()
         accept_json.pop('user',None)
         return JsonResponse(accept_json)
@@ -62,7 +62,7 @@ def kakao_callback(request):
         accept = requests.post(BASE_URL + 'api/user/kakao/login/finish', data=data)
         accept_status = accept.status_code
         if accept_status != 200:
-            return JsonResponse({'message': 'KAKAO_SIGNUP_FAILED'}, status=accept_status)
+            return JsonResponse({'message': 'kakao signup failed'}, status=accept_status)
         accept_json = accept.json()
         accept_json.pop('user',None)
         return JsonResponse(accept_json)
