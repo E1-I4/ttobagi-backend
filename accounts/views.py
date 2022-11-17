@@ -1,15 +1,8 @@
-import jwt
-from rest_framework.views import APIView
-from .serializers import *
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer, TokenRefreshSerializer
-from rest_framework import status, viewsets
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-from django.contrib.auth import authenticate
-from django.shortcuts import get_object_or_404
-from backend.settings import SECRET_KEY
 
-from .models import *
+from .models import User
+from .serializers import UserSerializer
+from rest_framework import generics
+
 # class RegisterAPIView(APIView):
 #     def post(self, request):
 #         serializer = UserSerializer(data=request.data)
@@ -113,7 +106,10 @@ from .models import *
 #         response.delete_cookie("refresh")
 #         return response
     
-class UserViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticated]
+class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+class UserDetail(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    
