@@ -1,26 +1,32 @@
-asgiref @ file:///home/conda/feedstock_root/build_artifacts/asgiref_1652752042988/work
+asgiref==3.5.2
 certifi==2022.9.24
 cffi==1.15.1
 charset-normalizer==2.1.1
 cryptography==38.0.3
 defusedxml==0.7.1
 dj-rest-auth==2.2.5
-Django @ file:///home/conda/feedstock_root/build_artifacts/django_1667305582810/work
+Django==4.1.3
 django-allauth==0.51.0
-django-cors-headers @ file:///home/conda/feedstock_root/build_artifacts/django-cors-headers_1654546143857/work
-djangorestframework @ file:///home/conda/feedstock_root/build_artifacts/djangorestframework_1663854154474/work
+django-cors-headers==3.13.0
+django-environ==0.4.5
+django-extensions==3.2.1
+djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.2
-gunicorn @ file:///Users/runner/miniforge3/conda-bld/gunicorn_1666818901733/work
+environ==1.0
+gunicorn==20.1.0
 idna==3.4
-mysqlclient @ file:///Users/runner/miniforge3/conda-bld/mysqlclient_1666954766733/work
 oauthlib==3.2.2
-Pillow @ file:///Users/runner/miniforge3/conda-bld/pillow_1666920636035/work
+Pillow==9.2.0
+pip==22.3.1
 pycparser==2.21
 PyJWT==2.6.0
 python3-openid==3.2.0
-pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1667391478166/work
+pytz==2022.6
 requests==2.28.1
 requests-oauthlib==1.3.1
-sqlparse @ file:///home/conda/feedstock_root/build_artifacts/sqlparse_1663990453245/work
-typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1665144421445/work
+setuptools==65.5.1
+six==1.16.0
+sqlparse==0.4.3
+typing_extensions==4.4.0
 urllib3==1.26.12
+wheel==0.38.4

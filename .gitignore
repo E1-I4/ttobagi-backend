@@ -2,3 +2,7 @@ db.sqlite3
 *__pycache__*
 secrets.json
 media/
+.env
+Dockerfile
+kubectl
+deployment.yml
