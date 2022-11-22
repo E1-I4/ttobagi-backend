@@ -2,50 +2,56 @@
     "animal": [
         {
             "name": "붉은박쥐",
-            "description": [
-                "'황금박쥐'라고도 불려요.",
-                "천연기념물 제 452호예요.",
-                "여름에는 풀숲에서 지내며, 겨울에는 습기가 높고 따뜻한 동굴에 1~2마리씩 겨울잠을 자는 것으로 알려졌어요."
-            ],
+            "description": "'황금박쥐'라고도 불려요.\\천연기념물 제 452호예요.\\여름에는 풀숲에서 지내며, 겨울에는 습기가 높고 따뜻한 동굴에 1~2마리씩 겨울잠을 자는 것으로 알려졌어요.",
+            "image": "images/bat_card.png",
+            "trash": "trashes/bat_trash.png",
+            "target": "target/bat_target.png",
+            "sick": "sick/bat_sick.png",
+            "sil": "sil/bat_sil.png",
             "latitude": 33.42449617863905,
             "longtitude": 126.55873488060126
         },
         {
             "name": "제주검독수리",
-            "description": [
-                "경계심이 강하여 빈틈이 없습니다!",
-                "흔적 없이 자유자재로 나타났다가 홀연히 사라지는 고독한 동물이예요.",
-                "날개를 펼쳤을 때 길이가 1~2m에 이르고 노루 새끼나 꿩을 잡아 먹어요."
-            ],
+            "description": "경계심이 강하여 빈틈이 없습니다!,\\흔적 없이 자유자재로 나타났다가 홀연히 사라지는 고독한 동물이예요.,\\날개를 펼쳤을 때 길이가 1~2m에 이르고 노루 새끼나 꿩을 잡아 먹어요.",
+            "image": "images/bat_card.png",
+            "trash": "trashes/bat_trash.png",
+            "target": "target/bat_target.png",
+            "sick": "sick/bat_sick.png",
+            "sil": "sil/bat_sil.png",
             "latitude": 33.37666553150976,
             "longtitude": 126.54221234824588
         },
         {
             "name": "비바리뱀",
-            "description": [
-                "'비바리'는 제주도 방언으로 '처녀'라는 뜻이에요. 긴 댕기머리 무늬가 어여쁜 처녀 같다고 해서 붙여진 이름입니다.",
-                "아열대 및 온대의 물가나 낮은 산지에 주로 살고 한라산 저지대나 야산의 목장 지대에서 볼 수 있어요."
-            ],
+            "description": "'비바리'는 제주도 방언으로 '처녀'라는 뜻이에요.\\긴 댕기머리 무늬가 어여쁜 처녀 같다고 해서 붙여진 이름입니다.\\아열대 및 온대의 물가나 낮은 산지에 주로 살고 한라산 저지대나 야산의 목장 지대에서 볼 수 있어요.",
+            "image": "images/snake_card.png",
+            "trash": "trashes/snake_trash.png",
+            "target": "target/snake_target.png",
+            "sick": "sick/snake_sick.png",
+            "sil": "sil/snake_sil.png",
             "latitude": 33.346960615082565,
             "longtitude": 126.54554768793933
         },
         {
             "name": "나팔고둥",
-            "description": [
-                "원뿔 모양 패각이 나선형을 이루고 있으며 나팔 모양처럼 생겼어요.",
-                "우리나라 고동류 가운데 가장 커요.",
-                "생타계 최상위에 해당하는 육식성 포식자입니다. 불가사리를 주로 잡아먹곤 해요."
-            ],
+            "description": "원뿔 모양 패각이 나선형을 이루고 있으며 나팔 모양처럼 생겼어요.\\우리나라 고동류 가운데 가장 커요.\\생타계 최상위에 해당하는 육식성 포식자입니다. 불가사리를 주로 잡아먹곤 해요.",
+            "image": "images/shell_card.png",
+            "trash": "trashes/shell_trash.png",
+            "target": "target/shell_target.png",
+            "sick": "sick/shell_sick.png",
+            "sil": "sil/shell_sil.png",
             "latitude": 33.46044421506273,
             "longtitude": 126.94076036816986
         },
         {
             "name": "갯게",
-            "description": [
-                "양 옆 가장자리가 볼록한 사각형으로 등면에 깊은 세로홈이 있고 보랏빛을 띠고 있어요.",
-                "갯벌이 있는 곳에 구멍을 파고 살아요.",
-                "갯벌의 유기물과 갈대를 먹고 일몰 직후 왕성하게 활동해요."
-            ],
+            "description": "양 옆 가장자리가 볼록한 사각형으로 등면에 깊은 세로홈이 있고 보랏빛을 띠고 있어요.\\갯벌이 있는 곳에 구멍을 파고 살아요.\\갯벌의 유기물과 갈대를 먹고 일몰 직후 왕성하게 활동해요.",
+            "image": "images/crap_card.png",
+            "trash": "trash/crap_trash.png",
+            "target": "target/crap_target.png",
+            "sick": "sick/crap_sick.png",
+            "sil": "sil/crap_sil.png",
             "latitude": 33.21804469922732,
             "longtitude": 126.26461618846412
         }

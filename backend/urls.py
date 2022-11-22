@@ -20,7 +20,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/user/', include('dj_rest_auth.urls')),
     path('api/user/', include('allauth.urls')),
     path('api/user/', include('accounts.urls')),
     path('api/animal/', include('animal_dictionary.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

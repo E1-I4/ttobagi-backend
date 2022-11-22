@@ -1,10 +1,12 @@
 from .models import Animal
 from rest_framework import serializers
     
-
 class AnimalSerializer(serializers.ModelSerializer):
     image = serializers.ImageField(use_url=True)
-    trashes = serializers.ImageField(use_url=True)
+    trash = serializers.ImageField(use_url=True)
+    target = serializers.ImageField(use_url=True)
+    sick = serializers.ImageField(use_url=True)
+    sil = serializers.ImageField(use_url=True)
     class Meta:
         model = Animal
-        fields = ('name','description','image','trashes','latitude','longtitude','owners')
+        fields = ('id','name','description','image','trash','target','sil','sick','latitude','longtitude','owners')

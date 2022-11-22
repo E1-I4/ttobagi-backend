@@ -18,7 +18,7 @@ environ.Env.read_env(
 )
 
 # KAKAO
-BASE_URL = "http://3.34.136.102:8000/"
+BASE_URL = "https://www.ttobagi.site/"
 KAKAO_CALLBACK_URI = BASE_URL + 'api/user/kakao/callback/'
 
 def kakao_login(request):
