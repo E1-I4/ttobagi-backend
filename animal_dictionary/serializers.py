@@ -9,4 +9,4 @@ class AnimalSerializer(serializers.ModelSerializer):
     sil = serializers.ImageField(use_url=True)
     class Meta:
         model = Animal
-        fields = ('id','name','description','image','trash','target','sil','sick','latitude','longtitude','owners')
+        fields = ('id','name','trash_name','description','trash_description','image','trash','target','sil','sick','latitude','longtitude','owners')
