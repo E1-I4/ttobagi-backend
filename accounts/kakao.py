@@ -10,6 +10,8 @@ from rest_framework import status
 from .models import User
 from backend.settings import environ,BASE_DIR
 import os
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponseRedirect
 
 
 env = environ.Env()
@@ -18,13 +20,12 @@ environ.Env.read_env(
 )
 
 # KAKAO
-BASE_URL = "https://www.ttobagi.site/"
+BASE_URL = "http://localhost:8000/"
 KAKAO_CALLBACK_URI = BASE_URL + 'api/user/kakao/callback/'
+KAKAO_CALLBACK_URI_REACT = "http://localhost:3000/kakaoLogin"
+KAKAO_CALLBACK_URI = KAKAO_CALLBACK_URI_REACT
 
-def kakao_login(request):
-    client_id = env('KAKAO_REST_API_KEY')
-    return redirect(f"https://kauth.kakao.com/oauth/authorize?client_id={client_id}&redirect_uri={KAKAO_CALLBACK_URI}&response_type=code&scope=account_email")
-
+@csrf_exempt
 def kakao_callback(request):
     client_id = env('KAKAO_REST_API_KEY')
     code = request.GET.get('code')
@@ -40,7 +41,7 @@ def kakao_callback(request):
     
     profile_request = requests.post("https://kapi.kakao.com/v2/user/me", headers={"Authorization": f"Bearer {access_token}"})
     profile_json = profile_request.json()
-    
+
     kakao_account = profile_json.get('kakao_account')
     email = kakao_account.get('email', None)
             
