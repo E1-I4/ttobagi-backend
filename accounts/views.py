@@ -6,6 +6,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from animal_dictionary.models import Animal
+from rest_framework.renderers import JSONRenderer
 
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.filter(is_active=True,is_superuser=False).all()
@@ -22,9 +23,8 @@ class UserAnimalList(generics.ListAPIView):
     
     def list(self,reqeust,*args,**kwargs):
         id_set = self.get_queryset().values('id')
-        is_serializer = IDSerializer(id_set,many=True)
-        
-        return Response(data=is_serializer.data,status=status.HTTP_200_OK)
+        id_serializer = IDSerializer(id_set,many=True)
+        return Response(data=id_serializer.data,status=status.HTTP_200_OK)
 
 @api_view(['POST'])
 def add_animal(request,pk):

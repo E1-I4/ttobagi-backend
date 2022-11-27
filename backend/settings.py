@@ -137,7 +137,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_HEADERS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:3000','https://www.ttobagi.site']
+CSRF_TRUSTED_ORIGINS = ['https://www.ttobagi.site','https://api.ttobagi.site']
 
 ROOT_URLCONF = 'backend.urls'
 

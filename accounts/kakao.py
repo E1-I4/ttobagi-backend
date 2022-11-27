@@ -18,9 +18,8 @@ environ.Env.read_env(
 )
 
 # KAKAO
-BASE_URL = "http://localhost:8000/"
-KAKAO_CALLBACK_URI = BASE_URL + 'api/user/kakao/callback/'
-KAKAO_CALLBACK_URI_REACT = "http://localhost:3000/kakaoLogin"
+BASE_URL = "https://api.ttobagi.site/"
+KAKAO_CALLBACK_URI_REACT = "https://www.ttobagi.site/kakaoLogin"
 KAKAO_CALLBACK_URI = KAKAO_CALLBACK_URI_REACT
 
 @csrf_exempt

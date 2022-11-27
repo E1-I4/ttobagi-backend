@@ -15,16 +15,6 @@ class UserSerializer(serializers.ModelSerializer):
             password = validated_data['password']
         )
         return user
-    
-    # def update(self, instance, validated_data):
-    #     animal_data = validated_data.pop('animal')
-    #     instance = super(UserSerializer, self).update(instance, validated_data)
-        
-    #     animal_qs = Animal.objects.filter(pk=animal_data['name'])
-        
-    #     if animal_qs.exists():
-    #         animal = animal_qs.first()
-    #         instance.animals.add(animal)
 
 class CustomTokenRefreshSerializer(serializers.Serializer):
     refresh_token = serializers.CharField()
