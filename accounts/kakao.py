@@ -3,7 +3,6 @@ from dj_rest_auth.registration.views import SocialLoginView
 from allauth.socialaccount.providers.kakao import views as kakao_view
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from allauth.socialaccount.models import SocialAccount
-from django.shortcuts import redirect
 from json import JSONDecodeError
 from django.http import JsonResponse
 from rest_framework import status
@@ -11,7 +10,6 @@ from .models import User
 from backend.settings import environ,BASE_DIR
 import os
 from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponseRedirect
 
 
 env = environ.Env()

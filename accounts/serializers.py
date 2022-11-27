@@ -33,3 +33,6 @@ class CustomTokenRefreshSerializer(serializers.Serializer):
         refresh = RefreshToken(attrs['refresh_token'])
         data = {'access_token':str(refresh.access_token)}
         return data
+
+class IDSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
