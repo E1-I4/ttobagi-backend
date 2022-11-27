@@ -7,6 +7,8 @@ def run():
     for animal in animals['animal']:
         new_animal = Animal.objects.create(
             name=animal['name'],
+            animal_name = animal['animal_name'],
+            animal_name_color = animal['animal_name_color'],
             trash_name = animal['trash_name'],
             description=animal['description'],
             trash_description = animal['trash_description'],
