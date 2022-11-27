@@ -5,7 +5,6 @@ from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.permissions import IsAuthenticated
 from animal_dictionary.models import Animal
 
 class UserDetail(generics.RetrieveAPIView):
@@ -13,7 +12,6 @@ class UserDetail(generics.RetrieveAPIView):
     serializer_class = UserSerializer
     
 class UserAnimalList(generics.ListAPIView):
-    permission_classes = [IsAuthenticated]
     serializer_class = AnimalSerializer
     def get_queryset(self):
         try:
@@ -30,7 +28,6 @@ class UserAnimalList(generics.ListAPIView):
 
 @api_view(['POST'])
 def add_animal(request,pk):
-    permission_classes = [IsAuthenticated]
     if request.method == 'POST':
         user = User.objects.get(pk=pk)
         animal = Animal.objects.get(id=request.data['id'])
