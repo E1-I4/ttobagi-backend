@@ -6,3 +6,4 @@ media/
 Dockerfile
 kubectl
 deployment.yml
+nohup.out

@@ -3,6 +3,8 @@ from django.db import models
 # Create your models here.
 class Animal(models.Model):
     name = models.CharField(max_length=30)
+    animal_name = models.ImageField(upload_to='name/',null=True,blank=True)
+    animal_name_color = models.ImageField(upload_to='name_color/',null=True,blank=True)
     trash_name = models.CharField(max_length=30,null=True,blank=True)
     description = models.CharField(max_length=300,null=True,blank=True)
     trash_description = models.CharField(max_length=100,null=True,blank=True)
