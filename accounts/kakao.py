@@ -18,9 +18,8 @@ environ.Env.read_env(
 )
 
 # KAKAO
-BASE_URL = "https://api.ttobagi.site/"
-KAKAO_CALLBACK_URI_REACT = "https://www.ttobagi.site/kakaoLogin"
-KAKAO_CALLBACK_URI = KAKAO_CALLBACK_URI_REACT
+BASE_URL = env('BASE_URL')
+KAKAO_CALLBACK_URI = env('REDIRECT_URL')
 
 @csrf_exempt
 def kakao_callback(request):
