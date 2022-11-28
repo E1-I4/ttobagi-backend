@@ -36,3 +36,13 @@ def add_animal(request,pk):
             return Response(data={'message':f'animal {animal.name} is added'},status=status.HTTP_200_OK)
         else:
             return Response(status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['DELETE'])
+def delete_animal(request,pk):
+    if request.method == 'DELETE':
+        user = User.objects.get(pk=pk)
+        try:
+            user.animals.all().delete()
+            return Response(data={'message':f'all animals are deleted'},status=status.HTTP_200_OK)
+        except:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
