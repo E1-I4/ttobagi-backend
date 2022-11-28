@@ -7,27 +7,21 @@ from json import JSONDecodeError
 from django.http import JsonResponse
 from rest_framework import status
 from .models import User
-from backend.settings import environ,BASE_DIR
-import os
+from backend.secret import BASE_URL, REDIRECT_URL, KAKAO_REST_API_KEY
 from django.views.decorators.csrf import csrf_exempt
 
-
-env = environ.Env()
-environ.Env.read_env(
-    env_file=os.path.join(BASE_DIR, '.env')
-)
-
 # KAKAO
-BASE_URL = env('BASE_URL')
-KAKAO_CALLBACK_URI = env('REDIRECT_URL')
+BASE_URL=BASE_URL
+KAKAO_CALLBACK_URI=REDIRECT_URL
 
 @csrf_exempt
 def kakao_callback(request):
-    client_id = env('KAKAO_REST_API_KEY')
+    client_id = KAKAO_REST_API_KEY
     code = request.GET.get('code')
     
     token_request = requests.get(f"https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id={client_id}&redirect_uri={KAKAO_CALLBACK_URI}&code={code}")
     token_response_json = token_request.json()
+    print(token_response_json)
     error = token_response_json.get('error', None)
     if error is not None:
         raise JSONDecodeError('kakao token error',error,0)
@@ -52,7 +46,7 @@ def kakao_callback(request):
         
         # 기존 가입된 유저
         data = {'access_token': access_token,'code': code}
-        accept = requests.post(BASE_URL + 'api/user/kakao/login/finish/', data=data)
+        accept = requests.post(BASE_URL + '/api/user/kakao/login/finish/', data=data)
         accept_status = accept.status_code
         if accept_status != 200:
             return JsonResponse({'message': 'kakao login failed'}, status=accept_status)
@@ -61,7 +55,7 @@ def kakao_callback(request):
     except User.DoesNotExist:
         # 신규 가입
         data = {'access_token': access_token,'code': code}
-        accept = requests.post(BASE_URL + 'api/user/kakao/login/finish/', data=data)
+        accept = requests.post(BASE_URL + '/api/user/kakao/login/finish/', data=data)
         accept_status = accept.status_code
         if accept_status != 200:
             return JsonResponse({'message': 'kakao signup failed'}, status=accept_status)

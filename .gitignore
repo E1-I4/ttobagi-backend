@@ -1,6 +1,6 @@
 db.sqlite3
 *__pycache__*
-secrets.json
+secret.py
 media/
 .env
 Dockerfile
