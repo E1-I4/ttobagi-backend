@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from animal_dictionary.views import api_root
 
 urlpatterns = [
+    path('',api_root),
     path('admin/', admin.site.urls),
+    path('api/',api_root),
     path('api/user/', include('dj_rest_auth.urls')),
     path('api/user/', include('allauth.urls')),
     path('api/user/', include('accounts.urls')),

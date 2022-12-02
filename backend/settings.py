@@ -28,7 +28,7 @@ SECRET_KEY = DJANGO_SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1","localhost","www.ttobagi.site","api.ttobagi.site"]
+ALLOWED_HOSTS = ["127.0.0.1","localhost","www.ttobagi.site","api.ttobagi.site","ttobagi.site"]
 
 # Application definition
 
@@ -185,7 +185,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = 'https://api.ttobagi.site/media/'
 
 STATICFIES_DIRS = [
     STATIC_ROOT,
