@@ -42,7 +42,7 @@ def delete_animal(request,pk):
     if request.method == 'DELETE':
         user = User.objects.get(pk=pk)
         try:
-            user.animals.all().delete()
+            user.animals.clear()
             return Response(data={'message':f'all animals are deleted'},status=status.HTTP_200_OK)
         except:
             return Response(status=status.HTTP_400_BAD_REQUEST)
